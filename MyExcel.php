@@ -87,7 +87,7 @@ class Exporter
      */
     public function open($file)
     {
-        if(!file_exists($file)) throw new \Exception($this->errorMsgs[\ZipArchive::ER_NOENT], \ZipArchive::ER_NOENT);
+        if(!file_exists($file)) throw new \Exception($this->_errorMsgs[\ZipArchive::ER_NOENT], \ZipArchive::ER_NOENT);
     
         $this->_file = $this->tempDir . DIRECTORY_SEPARATOR . self::genRandomFileName();
         copy($file, $this->_file);
